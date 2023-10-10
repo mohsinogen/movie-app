@@ -1,0 +1,14 @@
+.poster-image{
+    height: 250px;
+    width: 160px;
+    border-radius: 30px;
+}
+
+.card-row{
+    overflow-x: scroll;
+    flex-wrap: nowrap;
+}
+
+.movie-card{
+    padding: 10px;
+}
