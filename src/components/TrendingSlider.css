@@ -1,3 +1,6 @@
+.swiper-pagination {
+  bottom: 0 !important;
+}
 .swiper-pagination-bullet {
   width: 6px;
   height: 6px;
@@ -10,4 +13,13 @@
   height: 6px;
   transition: width 0.5s;
   background: var(--ion-color-primary) !important;
+}
+
+.swiper-slide {
+    transition: transform 0.5s ease !important;
+}
+
+.swiper-slide-active {
+    transform: scale(1.06) !important;
+  
 }

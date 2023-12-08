@@ -1,9 +1,12 @@
 import React from "react";
 import {
+  IonButton,
+  IonButtons,
   IonCard,
   IonCol,
   IonContent,
   IonHeader,
+  IonIcon,
   IonPage,
   IonRow,
   IonTitle,
@@ -15,6 +18,7 @@ import Row from "../components/Row";
 import requests from "../api";
 
 import TrendingSlider from "../components/TrendingSlider";
+import { notifications, search } from "ionicons/icons";
 
 
 const Tab1: React.FC = () => {
@@ -24,20 +28,35 @@ const Tab1: React.FC = () => {
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
+      <IonHeader className="ion-no-border ion-padding">
+
+        <IonToolbar color={'dark'}>
           <IonTitle>Home</IonTitle>
+          <IonButtons slot="secondary">
+            <IonButton shape="round" mode="ios">
+              <IonIcon slot="start" icon={notifications} size="large" />
+            </IonButton>
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
+
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Home</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+
+        <IonRow className="ion-margin">
+          <IonCol style={{ fontWeight: "600", fontSize: "1.7rem" }}>
+            Featured<br />
+            Top Movies
+          </IonCol>
+          <IonCol size="2" className="flex-centered">
+            <IonButton color="light" mode="ios" style={{ height: "110%", borderRadius: "20px" }}>
+              <IonIcon icon={search} size="large"></IonIcon>
+            </IonButton>
+          </IonCol>
+        </IonRow>
+
 
         <div className="ion-padding-bottom">
-          <TrendingSlider title="Trending Now" fetchURL={requests.fetchTrending}  />
+          <TrendingSlider title="Trending Now" fetchURL={requests.fetchTrending} />
           <Row
             title="NETFLIX ORIGINALS"
             fetchURL={requests.fetchNetflixOriginals}
